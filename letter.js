@@ -1,6 +1,6 @@
 Letter = function(char){
     this.char = " ";
-    char = char.substring(0,1);
+    char = char.substring(0,1).toUpperCase();
     if(/^[a-zA-Z\s]{1}$/.test(char)){
         this.char = char;
     }
@@ -8,7 +8,7 @@ Letter = function(char){
 }
 
 Letter.prototype.guess = function(guessedLetter){
-    if(this.char === guessedLetter){
+    if(this.char === guessedLetter.toUpperCase()){
         this.guessed = true;
         return true;
     }
