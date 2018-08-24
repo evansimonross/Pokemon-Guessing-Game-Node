@@ -1,7 +1,7 @@
 Letter = function(char){
     this.char = char;
     this.guessed = false;
-    this.display = function(){
+    this.toString = function(){
         if (this.guessed){
             return char;
         }
@@ -9,9 +9,13 @@ Letter = function(char){
             return "_";
         }
     }
-    this.guess = function(guessedChar){
-        if(this.char === guessedChar){
+    this.guess = function(guessedLetter){
+        if(this.char === guessedLetter){
             this.guessed = true;
+            return true;
         }
+        return false;
     }
 }
+
+module.exports = Letter;
